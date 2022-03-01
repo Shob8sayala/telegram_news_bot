@@ -1,5 +1,5 @@
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "newsbot-client.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv('DIALOGFLOW_CREDS')
 
 from google.cloud import dialogflow_v2beta1 as dialogflow
 dialogflow_session_client = dialogflow.SessionsClient()

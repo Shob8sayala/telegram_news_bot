@@ -4,12 +4,15 @@ from flask import Flask, request
 from telegram.ext import CommandHandler, MessageHandler, Filters, Dispatcher, CallbackContext
 from telegram import Bot, Update, ReplyKeyboardMarkup
 from utils import get_reply,fetch_news,topics_keyboard
+import dotenv
+import os
+dotenv.config()
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', 
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
-TOKEN  = "5000353690:AAFqTA267C8Q1Yzu22fcIII2LLTQTxyvo48"
+TOKEN  = os.getenv("BOT_TOKEN")
 
 app = Flask(__name__)    #create a flask object
 
